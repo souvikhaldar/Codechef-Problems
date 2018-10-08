@@ -25,21 +25,17 @@ class Stack:
             print(temp.data)
             temp = temp.next
 if __name__=='__main__':
-    st = Stack()
     for i in range(int(input())):
+        st = Stack()
         command = input()
         count = 0
-        print("Entered command",command)
         for j in command:
             if j == '<':
                 st.push(j)
-                print("Pushed ",j)
             elif j == '>':
-                print("Popped ",st.pop())
-                count +=2
-            print("Stack ", st.printSt())
-        print("Final command",st.printSt())
-        print("Final count",count)
+                if st.pop()== '<':
+                    count +=2
+        print(count)
 
 
 
